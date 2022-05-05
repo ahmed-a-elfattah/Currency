@@ -1,6 +1,11 @@
+import java.io.FileInputStream
+import java.util.*
+
 plugins {
     id("com.android.application")
     kotlin("android")
+    id("dagger.hilt.android.plugin")
+    kotlin("kapt")
 }
 
 android {
@@ -15,7 +20,18 @@ android {
         testInstrumentationRunner = Android.testInstrumentationRunner
     }
 
+    val localProperties = Properties().apply {
+        load(FileInputStream(File(rootProject.rootDir, "local.properties")))
+    }
+
     buildTypes {
+        getByName("debug") {
+            buildConfigField(
+                "String",
+                "fixer_api_key",
+                localProperties.getProperty("FIXER_API_KEY")
+            )
+        }
         getByName("release") {
             isMinifyEnabled = false
             proguardFiles(
@@ -31,15 +47,35 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
     implementation(Libs.coreKtx)
     implementation(Libs.appcompat)
     implementation(Libs.constraintLayout)
-    implementation (Libs.material)
+    implementation(Libs.material)
+
+    implementation(Libs.retrofit)
+    implementation(Libs.gson)
+    implementation(Libs.converterGson)
+    implementation(Libs.loggingInterceptor)
+
+    implementation(Libs.hiltAndroid)
+    kapt(Libs.hiltAndroidCompiler)
+
+    implementation(Libs.coroutines)
 
     testImplementation(TestLibs.junit)
+
     androidTestImplementation(TestLibs.extJunit)
     androidTestImplementation(TestLibs.espresso)
+}
+
+// Allow references to generated code
+kapt {
+    correctErrorTypes = true
 }
