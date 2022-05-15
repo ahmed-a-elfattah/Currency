@@ -50,7 +50,9 @@ android {
 
     buildFeatures {
         viewBinding = true
+        dataBinding =true
     }
+    namespace=Android.applicationId
 }
 
 dependencies {
@@ -68,6 +70,12 @@ dependencies {
     kapt(Libs.hiltAndroidCompiler)
 
     implementation(Libs.coroutines)
+
+    implementation(Libs.livedata)
+    implementation(Libs.viewModel)
+
+    implementation(Libs.navigationUI)
+    implementation(Libs.navigationFragment)
 
     testImplementation(TestLibs.junit)
 

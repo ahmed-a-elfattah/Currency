@@ -3,8 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../../../../../../layout/custom_preview.xml" value="0.1" />
+        <entry key="../../../../../Programs/linux/Android-linux/Sdk-linux/platforms/android-32/data/res/layout/simple_spinner_dropdown_item.xml" value="0.12590579710144928" />
+        <entry key="app/src/main/res/drawable/gradient_spinner.xml" value="0.1865" />
+        <entry key="app/src/main/res/drawable/ic_attach_money_24dp.xml" value="0.1865" />
+        <entry key="app/src/main/res/drawable/ic_baseline_swap_horiz_24.xml" value="0.1865" />
+        <entry key="app/src/main/res/drawable/ic_swap_horiz_48dp.xml" value="0.1865" />
+        <entry key="app/src/main/res/drawable/spinner_arrow.xml" value="0.1865" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.15625" />
-        <entry key="app/src/main/res/layout/fragment_convert_currency.xml" value="0.14719202898550723" />
+        <entry key="app/src/main/res/layout/fragment_convert_currency.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/item_dropdown.xml" value="0.14719202898550723" />
       </map>
     </option>
   </component>

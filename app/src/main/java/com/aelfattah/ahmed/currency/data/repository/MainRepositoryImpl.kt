@@ -7,4 +7,7 @@ import javax.inject.Inject
 class MainRepositoryImpl @Inject constructor(private val fixerApi: FixerApi) : MainRepository {
 
     override suspend fun getCurrencies() = fixerApi.getSymbols()
+
+    override suspend fun getCurrencyConversion(from: String, to: String, amount: Float) =
+        fixerApi.getCurrencyConversion(from = from, to = to, amount = amount)
 }

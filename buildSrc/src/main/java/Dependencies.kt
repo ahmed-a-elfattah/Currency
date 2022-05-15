@@ -8,12 +8,15 @@ object Versions {
     const val loggingInterceptor = "5.0.0-alpha.4"
 
     const val coroutines="1.3.9"
-    const val coroutinesTest="1.4.2"
+
+    const val lifecycle="2.2.0"
+
+    const val navigation= "2.4.2"
 }
 
 object BuildPlugins{
-    const val application="7.1.3"
-    const val library="7.1.3"
+    const val application="7.2.0"
+    const val library="7.2.0"
     const val kotlin="1.6.21"
     const val hilt = "2.40"
 }
@@ -47,8 +50,12 @@ object Libs {
     const val hiltAndroidCompiler="com.google.dagger:hilt-android-compiler:${BuildPlugins.hilt}"
 
     const val coroutines="org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines}"
-    const val coroutinesTest="org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutinesTest}"
 
+    const val livedata="androidx.lifecycle:lifecycle-livedata-ktx:${Versions.lifecycle}"
+    const val viewModel="androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycle}"
+
+    const val navigationUI="androidx.navigation:navigation-ui-ktx:${Versions.navigation}"
+    const val navigationFragment="androidx.navigation:navigation-fragment-ktx:${Versions.navigation}"
 }
 
 object TestLibs {
